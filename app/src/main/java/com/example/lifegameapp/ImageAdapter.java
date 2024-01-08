@@ -14,8 +14,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
 
     private ArrayList<Integer> squares = new ArrayList<>();
 
+    public void setOnCellListener(OnCellListener onCellListener) {
+        this.onCellListener = onCellListener;
+    }
+
+    private OnCellListener onCellListener;
+
     public void setSquares(ArrayList<Integer> squares){
         this.squares = squares;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -35,6 +42,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
         Integer intImage = squares.get(position);
         viewHolder.imageView.setImageResource(intImage);
 
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCellListener.onCellClick(v);
+            }
+        });
+
 
     }
 
@@ -51,5 +65,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
             super(itemView);
             imageView = itemView.findViewById(R.id.imageRect);
         }
+    }
+
+    interface OnCellListener{
+        void onCellClick(View view);
     }
 }

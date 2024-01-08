@@ -11,13 +11,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/life_game"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_start"/>
+        android:layout_gravity="center_horizontal"
+        android:text="@string/btn_start" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"

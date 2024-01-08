@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 //                R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com
 //        ));
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 400; i++) {
             squares.add(R.drawable.red_square_svgrepo_com);
         }
 
@@ -38,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         int numberOfColumns = ColumnCount.calculateNoOfColumns(this, 20);
         recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+
+        imageAdapter.setOnCellListener(new ImageAdapter.OnCellListener() {
+            @Override
+            public void onCellClick(View view) {
+                ImageView img = view.findViewById(R.id.imageRect);
+                img.setImageResource(R.drawable.green_square_svgrepo_com);
+            }
+        });
 
     }
 }
