@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LIFE GAME app</string>
+    <string name="btn_start">START</string>
+    <string name="imagedescr">imageDescr</string>
+</resources>
