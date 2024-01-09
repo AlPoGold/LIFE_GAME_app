@@ -5,4 +5,5 @@
     <string name="life_game">LIFE GAME</string>
     <string name="next_generation_btn">NEXT GENERATION</string>
     <string name="gen_count">Generation: %d</string>
+    <string name="clearBtn">CLEAR</string>
 </resources>

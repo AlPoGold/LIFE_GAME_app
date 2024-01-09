@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startBtn;
     private Button nextgenbtn;
     private TextView tvCountGen;
+    private Button clearBoard;
     private Board board;
     int countGen = 0;
     int[] positions =  new int[400];
@@ -46,14 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<Integer> squares = new ArrayList<>();
-//                (Arrays.asList(
-//            R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com,
-//                R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com,
-//                R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com,
-//                R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com,
-//                R.drawable.red_square_svgrepo_com,R.drawable.red_square_svgrepo_com
-//        ));
-
         for (int i = 0; i < 400; i++) {
             squares.add(R.drawable.red_square_svgrepo_com);
         }
@@ -62,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         startBtn = findViewById(R.id.btnStart);
         nextgenbtn = findViewById(R.id.nextGenBtn);
         tvCountGen = findViewById(R.id.tvCountGeneration);
+        clearBoard = findViewById(R.id.clearBoardBtn);
 
 
         String countGenString = getString(R.string.gen_count, countGen);
@@ -128,6 +122,18 @@ public class MainActivity extends AppCompatActivity {
 
                 updateRecycleView();
 
+            }
+        });
+
+        clearBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                board.clearBoard();
+                newCoordinates.clear();
+                updateRecycleView();
+                countGen = 0;
+                String countGenString = getString(R.string.gen_count, countGen);
+                tvCountGen.setText(countGenString);
             }
         });
 
