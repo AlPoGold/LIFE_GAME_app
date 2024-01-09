@@ -57,7 +57,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
         return squares.size();
     }
 
-    class ImageHolder extends RecyclerView.ViewHolder{
+    static class ImageHolder extends RecyclerView.ViewHolder{
 
         private ImageView imageView;
 

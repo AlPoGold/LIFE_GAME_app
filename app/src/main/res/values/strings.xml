@@ -3,4 +3,6 @@
     <string name="btn_start">START</string>
     <string name="imagedescr">imageDescr</string>
     <string name="life_game">LIFE GAME</string>
+    <string name="next_generation_btn">NEXT GENERATION</string>
+    <string name="gen_count">Generation: %d</string>
 </resources>

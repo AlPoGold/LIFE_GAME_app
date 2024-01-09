@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/life_game"
-        android:textSize="20sp"/>
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#0A21E8"
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/btnStart"
@@ -32,5 +35,22 @@
         tools:listitem="@layout/image_rect">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/nextGenBtn"
+        android:text="@string/next_generation_btn"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/tvCountGeneration"
+        android:text="@string/gen_count"
+        android:textAlignment="center"
+        android:layout_margin="20dp"/>
+
 
 </LinearLayout>
